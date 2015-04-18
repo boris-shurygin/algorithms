@@ -96,6 +96,9 @@
     <ClInclude Include="utest_impl.h" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\algorithms\algorithms.vcxproj">
+      <Project>{492726ea-018f-42e9-a88a-c97fc1d27dd2}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.vcxproj">
       <Project>{21e81e7e-0e8b-4cbb-bbfb-9319cca98ec4}</Project>
     </ProjectReference>

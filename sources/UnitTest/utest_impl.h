@@ -3,5 +3,6 @@
  * Copyright (C) 2012  Boris Shurygin
  */
 #include "../Utils/utils_iface.h"
+#include "../Algorithms/alg_iface.h"
 
 using namespace Utils;

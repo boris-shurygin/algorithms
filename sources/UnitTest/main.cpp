@@ -24,8 +24,10 @@ int main(int argc, char **argv)
      * the logging itself is tested above in Utils::uTest
      */
     Utils::Log::init();
+
+    RUN_TEST(Alg::uTestUF);
+
     Utils::Log::deinit();
-    
     Utils::MemMgr::deinit();
     
     cout.flush();
