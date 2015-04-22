@@ -25,8 +25,18 @@ int main(int argc, char **argv)
      */
     Utils::Log::init();
 
-    RUN_TEST(Alg::uTestUF);
+    // Alg utests
+    {
+        using namespace Alg;
+        RUN_TEST(Alg::uTestUF<PlainUF>);
+        RUN_TEST(Alg::uTestUF<TreeUF<>>);
 
+        typedef TreeUF<NotWeighted, PathCompression> NotWeightedPathCompressionTree;
+        typedef TreeUF<Weighted, NoCompression> WeightedNoCompressionTree;
+        RUN_TEST(Alg::uTestUF<NotWeightedPathCompressionTree>);
+        RUN_TEST(Alg::uTestUF<WeightedNoCompressionTree>);
+    }
+    
     Utils::Log::deinit();
     Utils::MemMgr::deinit();
     

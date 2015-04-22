@@ -12,11 +12,12 @@
 
 #include "../Utils/utils_iface.h"
 
-#include "uf.h" // Union-find algorithms
-
 namespace Alg
 {
     using namespace Utils;
 
-    bool uTestUF(UnitTest *utest_p);
+    template <class UFImpl> bool uTestUF(UnitTest *utest_p);
 }
+
+#include "uf.h" // Union-find algorithms
+

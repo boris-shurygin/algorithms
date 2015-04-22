@@ -22,5 +22,8 @@
     <ClCompile Include="alg_utest.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="uf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
