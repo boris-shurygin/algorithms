@@ -26,3 +26,6 @@
 *.exe
 *.out
 *.app
+
+# Visual studio user options
+*.user
