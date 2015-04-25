@@ -19,5 +19,6 @@ namespace Alg
     template <class UFImpl> bool uTestUF(UnitTest *utest_p);
 }
 
-#include "uf.h" // Union-find algorithms
+#include "uf.h"         // Union-find algorithms
+#include "bin_search.h" // Binary search algorithm
 

@@ -73,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="alg_iface.h" />
+    <ClInclude Include="bin_search.h" />
     <ClInclude Include="uf.h" />
   </ItemGroup>
   <ItemGroup>

@@ -31,10 +31,14 @@ int main(int argc, char **argv)
         RUN_TEST(Alg::uTestUF<PlainUF>);
         RUN_TEST(Alg::uTestUF<TreeUF<>>);
 
+        //Typedefs needed to avoid comma in RUN_TEST macro calls
         typedef TreeUF<NotWeighted, PathCompression> NotWeightedPathCompressionTree;
         typedef TreeUF<Weighted, NoCompression> WeightedNoCompressionTree;
+        
         RUN_TEST(Alg::uTestUF<NotWeightedPathCompressionTree>);
         RUN_TEST(Alg::uTestUF<WeightedNoCompressionTree>);
+
+        RUN_TEST(Alg::uTestBinSearch);
     }
     
     Utils::Log::deinit();
