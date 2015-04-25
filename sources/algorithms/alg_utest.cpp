@@ -36,16 +36,15 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
         UTEST_CHECK(utest_p, res3 == data.end());
     }
 
+    std::vector<A> data = { { 1, 1 }, { 2, 2 }, { 3, 3 }, { 4, 5 }, { 6, 5 }, { 5, 6 } };
+    A item1 = { 0, 5 };
+    A item2 = { 0, 4 };
+    A& item1_ref = item1;
+
     // Test with custom comparison function (function pointer syntax)
     {
-        std::vector<A> data = { { 1, 1 }, { 2, 2 }, { 3, 3 }, { 4, 5 }, { 6, 5 }, { 5, 6 } };
-
         bool (*comp)(A& a, A& b);
         comp = mycomp; //function pointer mess just to remind myself the syntax
-
-        A item1 = { 0, 5 };
-        A item2 = { 0, 4 };
-        A& item1_ref = item1;
 
         auto res1 = binSearch(item1_ref, data, comp);
         auto res2 = binSearch(item1, data.begin(), data.end(), comp);
@@ -54,18 +53,10 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
         UTEST_CHECK(utest_p, (*res1).a == 4);
         UTEST_CHECK(utest_p, (*res2).a == 4);
         UTEST_CHECK(utest_p, res3 == data.end());
-
     }
 
     // Test with custom comparison function (functor syntax)
     {
-        struct A
-        {
-            UInt32 a;
-            UInt32 b;
-        };
-        std::vector<A> data = { { 1, 1 }, { 2, 2 }, { 3, 3 }, { 4, 5 }, { 6, 5 }, { 5, 6 } };
-
         // Functor class
         struct Comp
         {
@@ -73,10 +64,6 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
         };
         Comp comp;
 
-        A item1 = { 0, 5 };
-        A item2 = { 0, 4 };
-        A& item1_ref = item1;
-
         auto res1 = binSearch(item1_ref, data, comp);
         auto res2 = binSearch(item1, data.begin(), data.end(), comp);
         auto res3 = binSearch(item2, data.begin(), data.end(), comp);
@@ -84,25 +71,13 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
         UTEST_CHECK(utest_p, (*res1).a == 4);
         UTEST_CHECK(utest_p, (*res2).a == 4);
         UTEST_CHECK(utest_p, res3 == data.end());
-
     }
 
     // Test with custom comparison function (lambda syntax)
     { 
-        struct A
-        {
-            UInt32 a;
-            UInt32 b;
-        };
-        std::vector<A> data = { { 1, 1 }, { 2, 2 }, { 3, 3 }, { 4, 5 }, { 6, 5 }, { 5, 6 } };
-        
         // Compare the 'b' field of a structure
         auto comp = [](A& a, A& b) -> bool { return a.b < b.b; };
         
-        A item1 = { 0, 5 };
-        A item2 = { 0, 4 };
-        A& item1_ref = item1;
-
         auto res1 = binSearch(item1_ref, data, comp);
         auto res2 = binSearch(item1, data.begin(), data.end(), comp);
         auto res3 = binSearch(item2, data.begin(), data.end(), comp);
@@ -112,8 +87,6 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
         UTEST_CHECK(utest_p, res3 == data.end());
 
     }
-
-
 
     return utest_p->result();
 }
