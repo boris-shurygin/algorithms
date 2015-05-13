@@ -39,6 +39,7 @@ int main(int argc, char **argv)
         RUN_TEST(Alg::uTestUF<WeightedNoCompressionTree>);
 
         RUN_TEST(Alg::uTestBinSearch);
+        RUN_TEST(Alg::uTestTrivialSorts);
     }
     
     Utils::Log::deinit();

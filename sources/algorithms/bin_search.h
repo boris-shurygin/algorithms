@@ -1,8 +1,8 @@
 /**
 * @file: uf.h
-* Interface of union-find algorithms library
+* Interface and implementation of binary serach algorithms library
 * @ingroup Algorithms
-* @brief Implementation of Union-Find algorithms after lectures by Robert Segewick
+* @brief Implementation of binary search algorithm after lectures by Robert Segewick
 */
 /*
 * Algorithms library

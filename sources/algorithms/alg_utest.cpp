@@ -89,3 +89,39 @@ bool Alg::uTestBinSearch(UnitTest *utest_p)
 
     return utest_p->result();
 }
+
+
+bool Alg::uTestTrivialSorts(UnitTest *utest_p)
+{
+    {
+        std::string str("sort me up please");
+        bubbleSort(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        bubbleSort(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    {
+        std::string str("sort me up please");
+        selectionSort(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        selectionSort(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    {
+        std::string str("sort me up please");
+        insertionSort(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        insertionSort(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    return utest_p->result();
+}
