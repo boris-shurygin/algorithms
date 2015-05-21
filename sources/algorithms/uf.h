@@ -14,6 +14,7 @@ namespace Alg
 {
     /**
      * Union-find data structure
+     * @ingroup Algorithms
      */
     template < class UFImplementation> class UF:
         protected UFImplementation
@@ -97,7 +98,10 @@ namespace Alg
     };
 
 
-    /** Tree based implementation of union-find */
+    /** 
+     * Tree based implementation of union-find
+     * @ingroup Algorithms
+     */
     template <TreeUFWeighted is_weighted = Weighted,
               TreeUFCompress compress = PathCompression> class TreeUF
     {

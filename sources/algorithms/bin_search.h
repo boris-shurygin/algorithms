@@ -15,6 +15,7 @@ namespace Alg
 {
     /**
      * Binary search of element's iterator based on its value. Search is done between the 'from' and 'to' iterators
+     * @ingroup Algorithms
      */
     template <class Value, class RandomAccessIterator, class Compare = std::less<Value> >
     typename RandomAccessIterator binSearch(const Value &val, RandomAccessIterator from, RandomAccessIterator to, Compare comp = std::less<Value>() )
@@ -41,6 +42,7 @@ namespace Alg
 
     /**
      * Returns iterator corresponding to the given value in the container
+     * @ingroup Algorithms
      */
     template <class Value, class Container, class Compare = std::less<Value> >
     typename Container::iterator binSearch(const Value &val, Container &data, Compare comp = std::less<Value>())

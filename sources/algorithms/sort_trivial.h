@@ -1,13 +1,13 @@
 /**
-* @file: sort_trivial.h
-* Interface and implementation of trivail sorting algorithms
-* @ingroup Algorithms
-* @brief Implementation of trivail sorting algorithms after lectures by Robert Segewick
-*/
+ * @file: sort_trivial.h
+ * Interface and implementation of trivial sorting algorithms
+ * @ingroup Algorithms
+ * @brief Implementation of trivail sorting algorithms after lectures by Robert Segewick
+ */
 /*
-* Algorithms library
-* Copyright (C) 2015  Boris Shurygin
-*/
+ * Algorithms library
+ * Copyright (C) 2015  Boris Shurygin
+ */
 #include <vector>
 #include <iterator>
 #include <algorithm>

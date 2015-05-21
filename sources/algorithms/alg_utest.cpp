@@ -125,3 +125,49 @@ bool Alg::uTestTrivialSorts(UnitTest *utest_p)
 
     return utest_p->result();
 }
+
+bool Alg::uTestSort(UnitTest *utest_p)
+{
+    // Test Shell's sorting algorithm
+    {
+        std::string str("sort me up please");
+        shellSort(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        shellSort(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    // Shuffle uTest
+    {
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        shellSort(vec.begin(), vec.end());
+        shuffle(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, !std::is_sorted(vec.begin(), vec.end())); // This test can fail once in a while
+    }
+
+    // Test merge sort algorithm
+    {
+        std::string str("sort me up please");
+        mergeSort(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        mergeSort(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    // Test bottom up merge sort algorithm
+    {
+        std::string str("sort me up please");
+        mergeSortBU(str.begin(), str.end());
+        UTEST_CHECK(utest_p, std::is_sorted(str.begin(), str.end()));
+
+        std::vector<UInt32> vec = { 23, 24, 4, 2, 4, 5, 6, 43, 8, 9, 1 };
+        mergeSortBU(vec.begin(), vec.end());
+        UTEST_CHECK(utest_p, std::is_sorted(vec.begin(), vec.end()));
+    }
+
+    return utest_p->result();
+}
