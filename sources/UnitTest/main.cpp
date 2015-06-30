@@ -41,6 +41,7 @@ int main(int argc, char **argv)
         RUN_TEST(Alg::uTestBinSearch);
         RUN_TEST(Alg::uTestTrivialSorts);
         RUN_TEST(Alg::uTestSort);
+        RUN_TEST(Alg::uTestHeap);
     }
     
     Utils::Log::deinit();

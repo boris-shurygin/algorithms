@@ -39,5 +39,6 @@ namespace Alg
 #include "uf.h"           // Union-find algorithms
 #include "bin_search.h"   // Binary search algorithm
 #include "sort_trivial.h" // Trivial sorting algorithms
+#include "heap.h"         // Heap related algorithms and the PriorityQueue class
 #include "sort.h"         // Non-trivial sorting algorothms
 

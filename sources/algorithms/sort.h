@@ -205,5 +205,6 @@ namespace Alg
     }
 
     bool uTestSort(UnitTest *utest_p);
+    bool uTestHeap(UnitTest *utest_p);
 
 } /* namespace Alg */

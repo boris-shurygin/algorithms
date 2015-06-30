@@ -74,6 +74,7 @@
   <ItemGroup>
     <ClInclude Include="alg_iface.h" />
     <ClInclude Include="bin_search.h" />
+    <ClInclude Include="heap.h" />
     <ClInclude Include="sort.h" />
     <ClInclude Include="sort_trivial.h" />
     <ClInclude Include="uf.h" />

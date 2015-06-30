@@ -126,6 +126,36 @@ bool Alg::uTestTrivialSorts(UnitTest *utest_p)
     return utest_p->result();
 }
 
+bool Alg::uTestHeap(UnitTest *utest_p)
+{
+    PriorityQueue<UInt32> pq;
+
+    pq.push(20);
+    pq.push(10);
+    pq.push(30);
+    pq.push(0);
+
+    UTEST_CHECK(utest_p, pq.size() == 4);
+    UTEST_CHECK(utest_p, !pq.empty());
+    
+    UTEST_CHECK(utest_p, pq.top() == 30);
+    pq.pop();
+
+    UTEST_CHECK(utest_p, pq.top() == 20);
+    pq.pop(); 
+    
+    UTEST_CHECK(utest_p, pq.top() == 10);
+    pq.pop();
+
+    UTEST_CHECK(utest_p, pq.top() == 0);
+    pq.pop();
+
+    UTEST_CHECK(utest_p, pq.empty());
+
+    return utest_p->result();
+}
+
+
 bool Alg::uTestSort(UnitTest *utest_p)
 {
     // Test Shell's sorting algorithm
