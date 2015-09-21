@@ -1,2 +1,2 @@
 # algorithms
-Implementation of algorithms (after Robert Segewick and Kevin Wayne online course)
+Implementation of algorithms (after the Robert Segewick and Kevin Wayne online course)
